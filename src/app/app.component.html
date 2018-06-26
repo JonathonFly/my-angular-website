@@ -1,23 +1,15 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Custom Toolbar</span>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span>Second Line</span>
+    <a mat-button>
+        <img src="../assets/img/myself1.svg" width="60" height="60">
+      </a>
+    <a mat-button>
+       <mat-icon>library_books</mat-icon> Articles
+    </a>
     <span class="nav-bar-spacer"></span>
-    <mat-icon class="nav-bar-icon">verified_user</mat-icon>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
-    <span>Third Line</span>
-    <span class="nav-bar-spacer"></span>
-    <mat-icon class="nav-bar-icon">favorite</mat-icon>
-    <mat-icon class="nav-bar-icon">delete</mat-icon>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row>
     <app-theme-picker></app-theme-picker>
+    <a mat-button href="https://github.com/JonathonFly">
+      <img src="../assets/img/github-circle-white-transparent.svg"> GitHub
+    </a>
   </mat-toolbar-row>
 </mat-toolbar>
-
