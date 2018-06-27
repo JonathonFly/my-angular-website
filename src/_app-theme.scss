@@ -1,4 +1,6 @@
 @import '../node_modules/@angular/material/theming';
+@import './app/home-page/home-page-theme';
+@import './styles/svg-theme';
 // @import './app/shared/navbar/navbar-theme';
 
 // Styles for the docs app that are based on the current theme.
@@ -27,4 +29,6 @@
     }
   
     // @include nav-bar-theme($theme);
+    @include home-page-theme($theme);
+    @include docs-site-svg-theme($theme);
   }

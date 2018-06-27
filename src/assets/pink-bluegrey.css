@@ -8,6 +8,16 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ * @param target Which kind of high contrast setting to target. Defaults to `active`, can be
+ *    `white-on-black` or `black-on-white`.
+ */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 .hljs {
   display: block;
   overflow-x: auto;
@@ -1261,3 +1271,105 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 .docs-footer {
   background: #e91e63;
   color: white; }
+
+app-home-page .docs-header-background {
+  background: #e91e63; }
+
+app-home-page .docs-header-headline {
+  color: white; }
+
+app-home-page .docs-header-start {
+  color: #e91e63; }
+
+app-home-page .docs-homepage-row {
+  color: rgba(255, 255, 255, 0.7); }
+
+.docs-svg-primary-fill {
+  fill: #e91e63; }
+
+.docs-svg-primary-stroke {
+  stroke: #e91e63; }
+
+.docs-svg-primary-stop-color {
+  stop-color: #e91e63; }
+
+.docs-svg-accent-fill {
+  fill: #b0bec5; }
+
+.docs-svg-accent-stroke {
+  stroke: #b0bec5; }
+
+.docs-svg-accent-stop-color {
+  stop-color: #b0bec5; }
+
+.docs-svg-primary-dark-30-fill {
+  fill: #a81044; }
+
+.docs-svg-primary-dark-30-stroke {
+  stroke: #a81044; }
+
+.docs-svg-primary-dark-30-stop-color {
+  stop-color: #a81044; }
+
+.docs-svg-primary-dark-40-fill {
+  fill: #900e3a; }
+
+.docs-svg-primary-dark-40-stroke {
+  stroke: #900e3a; }
+
+.docs-svg-primary-dark-40-stop-color {
+  stop-color: #900e3a; }
+
+.docs-svg-primary-light-20-fill {
+  fill: #ed4b82; }
+
+.docs-svg-primary-light-20-stroke {
+  stroke: #ed4b82; }
+
+.docs-svg-primary-light-20-stop-color {
+  stop-color: #ed4b82; }
+
+.docs-svg-primary-light-30-fill {
+  fill: #f06292; }
+
+.docs-svg-primary-light-30-stroke {
+  stroke: #f06292; }
+
+.docs-svg-primary-light-30-stop-color {
+  stop-color: #f06292; }
+
+.docs-svg-primary-light-40-fill {
+  fill: #f278a1; }
+
+.docs-svg-primary-light-40-stroke {
+  stroke: #f278a1; }
+
+.docs-svg-primary-light-40-stop-color {
+  stop-color: #f278a1; }
+
+.docs-svg-primary-light-60-fill {
+  fill: #f6a5c1; }
+
+.docs-svg-primary-light-60-stroke {
+  stroke: #f6a5c1; }
+
+.docs-svg-primary-light-60-stop-color {
+  stop-color: #f6a5c1; }
+
+.docs-svg-primary-light-80-fill {
+  fill: #fbd2e0; }
+
+.docs-svg-primary-light-80-stroke {
+  stroke: #fbd2e0; }
+
+.docs-svg-primary-light-80-stop-color {
+  stop-color: #fbd2e0; }
+
+.docs-svg-primary-light-85-fill {
+  fill: #fcdde8; }
+
+.docs-svg-primary-light-85-stroke {
+  stroke: #fcdde8; }
+
+.docs-svg-primary-light-85-stop-color {
+  stop-color: #fcdde8; }

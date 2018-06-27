@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ThemePickerModule } from './shared/theme-picker/theme-picker.module';
+import { HomePageModule } from './home-page/home-page.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ThemePickerModule
+    ThemePickerModule,
+    HomePageModule
   ],
   declarations: [
     AppComponent
