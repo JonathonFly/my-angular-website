@@ -1,7 +1,10 @@
 @import '../node_modules/@angular/material/theming';
 @import './app/home-page/home-page-theme';
 @import './styles/svg-theme';
-// @import './app/shared/navbar/navbar-theme';
+@import './app/nav-bar/nav-bar-theme';
+@import './app/article-list/article-list-theme';
+@import './app/shared/table-of-contents/table-of-contents-theme';
+@import './styles/markdown-theme';
 
 // Styles for the docs app that are based on the current theme.
 @mixin material-docs-app-theme($theme) {
@@ -28,7 +31,10 @@
       color: mat-color($primary, default-contrast);
     }
   
-    // @include nav-bar-theme($theme);
+    @include nav-bar-theme($theme);
     @include home-page-theme($theme);
     @include docs-site-svg-theme($theme);
+    @include article-list-theme($theme);
+    @include table-of-contents-theme($theme);
+    @include docs-site-markdown-theme($theme);
   }

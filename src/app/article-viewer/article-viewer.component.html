@@ -1,0 +1,12 @@
+<div class="docs-primary-header">
+    <h1>{{article.name}}</h1>
+  </div>
+  
+  <div class="docs-article-wrapper">
+    <div class="docs-article-toc-and-content">
+      <doc-viewer class="docs-article-content" 
+        (contentLoaded)="toc.updateScrollPosition()"
+        [documentUrl]="article.document"></doc-viewer>
+      <app-table-of-contents #toc container="app-article-viewer"></app-table-of-contents>
+    </div>
+  </div>

@@ -1,0 +1,11 @@
+<div class="docs-primary-header">
+  <h1>Articles</h1>
+</div>
+
+<mat-nav-list class="docs-article-list">
+  <a mat-list-item *ngFor="let article of articleItems.getAllItems()"
+      class="docs-article-item"
+      [routerLink]="['/article/', article.id]">
+    {{article.name}}
+  </a>
+</mat-nav-list>

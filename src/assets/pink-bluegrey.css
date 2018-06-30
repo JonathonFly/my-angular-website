@@ -18,6 +18,16 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ * @param target Which kind of high contrast setting to target. Defaults to `active`, can be
+ *    `white-on-black` or `black-on-white`.
+ */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 .hljs {
   display: block;
   overflow-x: auto;
@@ -1272,6 +1282,9 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   background: #e91e63;
   color: white; }
 
+app-nav-bar .mat-toolbar-row {
+  background: #e91e63; }
+
 app-home-page .docs-header-background {
   background: #e91e63; }
 
@@ -1373,3 +1386,30 @@ app-home-page .docs-homepage-row {
 
 .docs-svg-primary-light-85-stop-color {
   stop-color: #fcdde8; }
+
+.docs-article-list .docs-article-item {
+  color: #e91e63; }
+
+.docs-toc-container {
+  border-left: solid 4px #e91e63; }
+  .docs-toc-container .docs-link {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 100ms; }
+    .docs-toc-container .docs-link:hover, .docs-toc-container .docs-link.docs-active {
+      color: #e91e63; }
+
+.docs-markdown-a {
+  color: #e91e63; }
+
+.docs-markdown-pre {
+  background: rgba(255, 255, 255, 0.01);
+  border: 0.5px solid rgba(255, 255, 255, 0.03); }
+  .docs-markdown-pre .docs-markdown-code {
+    background: transparent; }
+
+.docs-markdown-h3 .material-icons,
+.docs-markdown-h4 .material-icons {
+  color: rgba(255, 255, 255, 0.7); }
+
+.docs-markdown-code {
+  background: rgba(255, 255, 255, 0.06); }
