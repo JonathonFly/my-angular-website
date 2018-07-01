@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>MyWebsite</title>
@@ -9,11 +10,22 @@
   <meta name="mobile-web-app-capable" content="yes">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/splash-screen/splash.min.css">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:300" rel="stylesheet">
+  <script src="assets/splash-screen/splash.min.js"></script>
+  <script>
+    var Splash = window.Splash;
+  
+    //enable with a specific theme.
+    //Possible themes are: 'tailing', 'audio-wave', 'windcatcher', 'spinner-section', 'spinner-section-far', 'circular'.
+      Splash.enable('windcatcher');
+  </script>
 </head>
+
 <body class="docs-app-background">
   <app-root></app-root>
 </body>
+
 </html>

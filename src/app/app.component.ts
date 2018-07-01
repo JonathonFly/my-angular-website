@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, AfterViewInit, OnDestroy } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { Splash } from 'splash-screen';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,8 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent {
-
+export class AppComponent implements AfterViewInit, OnDestroy {
+  timeOutId;
   constructor(router: Router) {
     let previousRoute = router.routerState.snapshot.url;
 
@@ -25,14 +26,29 @@ export class AppComponent {
         previousRoute = data.urlAfterRedirects;
       });
   }
+
+  ngAfterViewInit(){
+    this.timeOutId = setTimeout(() => {
+      if (Splash.isRunning()) {
+        Splash.destroy();
+      }
+    }, 10);
+  }
+
+  ngOnDestroy(){
+    if (this.timeOutId) {
+      clearTimeout(this.timeOutId);
+    }
+
+  }
 }
 
 function isNavigationWithinComponentView(oldUrl: string, newUrl: string) {
   const componentViewExpression = /components\/(\w+)/;
   return oldUrl && newUrl
-      && componentViewExpression.test(oldUrl)
-      && componentViewExpression.test(newUrl)
-      && oldUrl.match(componentViewExpression)[1] === newUrl.match(componentViewExpression)[1];
+    && componentViewExpression.test(oldUrl)
+    && componentViewExpression.test(newUrl)
+    && oldUrl.match(componentViewExpression)[1] === newUrl.match(componentViewExpression)[1];
 }
 
 function resetScrollPosition() {
