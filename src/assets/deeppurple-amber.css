@@ -28,6 +28,26 @@
 /* Theme for the ripple elements.*/
 /* stylelint-disable material/no-prefixes */
 /* stylelint-enable */
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ * @param target Which kind of high contrast setting to target. Defaults to `active`, can be
+ *    `white-on-black` or `black-on-white`.
+ */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ * @param target Which kind of high contrast setting to target. Defaults to `active`, can be
+ *    `white-on-black` or `black-on-white`.
+ */
+/* Theme for the ripple elements.*/
+/* stylelint-disable material/no-prefixes */
+/* stylelint-enable */
 .mat-ripple-element {
   background-color: rgba(0, 0, 0, 0.1); }
 
@@ -1187,8 +1207,11 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
   background: #673ab7;
   color: white; }
 
-app-nav-bar .mat-toolbar-row {
-  background: #673ab7; }
+app-nav-bar {
+  color: white; }
+  app-nav-bar .docs-navbar,
+  app-nav-bar .docs-navbar-header {
+    background: #673ab7; }
 
 app-home-page .docs-header-background {
   background: #673ab7; }
@@ -1318,3 +1341,23 @@ app-home-page .docs-homepage-row {
 
 .docs-markdown-code {
   background: rgba(0, 0, 0, 0.03); }
+
+.docs-api table,
+.docs-markdown-table {
+  color: rgba(0, 0, 0, 0.87); }
+
+.docs-api th,
+.docs-markdown-th {
+  background: whitesmoke; }
+
+.docs-api td,
+.docs-markdown-td {
+  border: 1px solid rgba(0, 0, 0, 0.03); }
+
+app-article-viewer {
+  color: rgba(0, 0, 0, 0.87); }
+  app-article-viewer .mat-tab-label:focus {
+    color: rgba(0, 0, 0, 0.87); }
+
+.docs-api-h3 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12); }

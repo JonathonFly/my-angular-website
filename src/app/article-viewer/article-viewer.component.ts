@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ArticleItem, ArticleItems } from '../shared/article-items/article-items';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComponentPageTitle } from '../shared/page-title/page-title';

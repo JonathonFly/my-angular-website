@@ -2,7 +2,7 @@ app-root {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 56px;
+    top: 66px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -18,18 +18,18 @@ app-root {
   
   app-root > app-home-page,
   app-root > app-article-list,
-  app-root > article-viewer {
+  app-root > app-article-viewer {
     overflow-y: auto;
   }
   
   @media (max-width: 720px) {
     app-root {
-      top: 92px;
+      top: 102px;
     }
   
     app-root > app-home-page,
     app-root > app-article-list,
-    app-root > article-viewer {
+    app-root > app-article-viewer {
       overflow-y: visible;
     }
   }

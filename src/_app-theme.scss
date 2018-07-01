@@ -4,7 +4,9 @@
 @import './app/nav-bar/nav-bar-theme';
 @import './app/article-list/article-list-theme';
 @import './app/shared/table-of-contents/table-of-contents-theme';
+@import './app/article-viewer/article-viewer-theme';
 @import './styles/markdown-theme';
+@import './styles/tables-theme';
 
 // Styles for the docs app that are based on the current theme.
 @mixin material-docs-app-theme($theme) {
@@ -37,4 +39,6 @@
     @include article-list-theme($theme);
     @include table-of-contents-theme($theme);
     @include docs-site-markdown-theme($theme);
+    @include docs-site-tables-theme($theme);
+    @include article-viewer-theme($theme);
   }

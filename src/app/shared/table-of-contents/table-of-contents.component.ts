@@ -23,7 +23,7 @@ interface Link {
 }
 
 @Component({
-  selector: 'app-table-of-contents',
+  selector: 'table-of-contents',
   templateUrl: './table-of-contents.component.html',
   styleUrls: ['./table-of-contents.component.scss']
 })

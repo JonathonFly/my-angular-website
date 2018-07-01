@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <mat-toolbar-row>
     <a mat-button routerLink="/">
       <img src="../../assets/img/myself1.svg" width="60" height="60">
@@ -12,4 +12,31 @@
       <img src="../../assets/img/github-circle-white-transparent.svg"> GitHub
     </a>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
+
+<nav class="docs-navbar-header">
+  <a mat-button class="docs-button" routerLink="/" aria-label="JonathonFly Site">
+    <img class="docs-my-logo"
+         src="../../assets/img/myself1.svg"
+         alt="jonathonfly">
+  </a>
+  <a mat-button class="docs-navbar-hide-small docs-button" routerLink="articles"><mat-icon>library_books</mat-icon>Articles</a>
+  <div class="flex-spacer"></div>
+  <app-theme-picker></app-theme-picker>
+  <a mat-button class="docs-button docs-navbar-hide-small" href="https://github.com/JonathonFly"
+     aria-label="GitHub Repository">
+    <img class="docs-github-logo"
+         src="../../assets/img/github-circle-white-transparent.svg"
+         alt="jonathonfly">
+    GitHub
+  </a>
+  <a mat-icon-button class="docs-button docs-navbar-show-small"
+     href="https://github.com/JonathonFly" aria-label="GitHub Repository">
+    <img class="docs-github-logo"
+         src="../../assets/img/github-circle-white-transparent.svg"
+         alt="jonathonfly">
+  </a>
+</nav>
+<nav class="docs-navbar docs-navbar-show-small">
+  <a mat-button class="docs-navbar-link" routerLink="articles"><mat-icon>library_books</mat-icon>Articles</a>
+</nav>
