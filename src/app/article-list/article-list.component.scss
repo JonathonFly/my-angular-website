@@ -1,5 +1,4 @@
 @import '../../styles/constants';
-
 :host {
   display: flex;
   flex-direction: column;
@@ -9,12 +8,42 @@
 .docs-article-list {
   flex-grow: 1;
   margin: $content-padding-side;
-
   @media (max-width: $small-breakpoint-width) {
     margin: 0;
   }
 }
 
-.docs-article-item, .docs-article-item:hover {
+.docs-article-item,
+.docs-article-item:hover {
   text-decoration: none;
+}
+
+.docs-grid-title {
+  margin: 1em;
+}
+
+.docs-tag {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.docs-card-subtitle {
+  float:right;
+  width: 100%;
+
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.docs-card-subtitle-text{
+  float:right;
+  padding-right: 3em;
+}
+
+.docs-action-chips{
+  padding-left: 1em;
+  padding-right: 1em;
 }

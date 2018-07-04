@@ -8,4 +8,15 @@
   .docs-article-list .docs-article-item {
     color: mat-color($primary);
   }
+
+  .docs-tag {
+    &:hover {
+      background: mat-color($accent);
+    }
+  }
+
+  .docs-card-subtitle {
+    color: mat-color($foreground, secondary-text);
+  }
+
 }

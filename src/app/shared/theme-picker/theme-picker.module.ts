@@ -6,12 +6,19 @@ import { StyleManager } from '../style-manager/style-manager';
 import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MaterialModule
-  ],
-  declarations: [ThemePickerComponent],
-  exports: [ThemePickerComponent],
-  providers: [StyleManager, ThemeStorage]
+   imports: [
+      CommonModule,
+      MaterialModule
+   ],
+   declarations: [
+      ThemePickerComponent
+   ],
+   exports: [
+      ThemePickerComponent
+   ],
+   providers: [
+      StyleManager,
+      ThemeStorage
+   ]
 })
 export class ThemePickerModule { }

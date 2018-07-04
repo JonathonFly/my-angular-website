@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleItems } from '../shared/article-items/article-items';
+import { ArticleItems } from '../article-items/article-items';
 import { ComponentPageTitle } from '../shared/page-title/page-title';
 
 @Component({

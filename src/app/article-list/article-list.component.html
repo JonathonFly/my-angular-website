@@ -2,10 +2,38 @@
   <h1>Articles</h1>
 </div>
 
-<mat-nav-list class="docs-article-list">
-  <a mat-list-item *ngFor="let article of articleItems.getAllItems()"
-      class="docs-article-item"
-      [routerLink]="['/article/', article.id]">
-    {{article.name}}
-  </a>
-</mat-nav-list>
+<mat-grid-list cols="2" rowHeight="16em">
+
+  <mat-grid-tile *ngFor="let article of articleItems.getAllItems()" >
+    <mat-card class="docs-grid-title">
+      <mat-card-header>
+        <div mat-card-avatar><mat-icon>library_books</mat-icon></div>
+        <mat-card-title>
+          <h3>{{article.name}}</h3>
+        </mat-card-title>
+        <!-- <mat-card-subtitle>
+          <a [routerLink]="['/article/', article.id]" class="docs-card-subtitle">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read More&nbsp;&nbsp;>>
+          </a>
+        </mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{article.summary | shortsummary}}
+          <br>
+          <br>
+          <a [routerLink]="['/article/', article.id]" class="docs-card-subtitle">
+            <span class="docs-card-subtitle-text">Read More&nbsp;&nbsp;>></span>
+          </a>
+        </p>
+      </mat-card-content>
+      <mat-card-actions  class="docs-action-chips">
+        <mat-chip-list>
+          <mat-chip *ngFor="let tag of article.tags" selected color="primary"  class="docs-tag">
+            {{tag}}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

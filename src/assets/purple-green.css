@@ -1413,6 +1413,12 @@ app-home-page .docs-homepage-row {
 .docs-article-list .docs-article-item {
   color: #9c27b0; }
 
+.docs-tag:hover {
+  background: #69f0ae; }
+
+.docs-card-subtitle {
+  color: rgba(255, 255, 255, 0.7); }
+
 .docs-toc-container {
   border-left: solid 4px #9c27b0; }
   .docs-toc-container .docs-link {
