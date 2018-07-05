@@ -9,10 +9,42 @@ import { ComponentPageTitle } from '../shared/page-title/page-title';
 })
 export class ArticleListComponent implements OnInit {
 
+  articles: ArticleItems[][] = [];
   constructor(public articleItems: ArticleItems, public _componentPageTitle: ComponentPageTitle) { }
 
   ngOnInit() {
     this._componentPageTitle.title = 'Articles';
+    this.splitArticles();
   }
+
+  private splitArticles() {
+    const allArticles = this.articleItems.getAllItems();
+    const odd = [];
+    const even = [];
+    if (allArticles && allArticles.length > 0) {
+      allArticles.forEach((value, index) => {
+        if (index % 2 === 0) {
+          even.push(value);
+        } else {
+          odd.push(value);
+        }
+      });
+
+      for (let i = 0; i < odd.length; i++) {
+        const arr = [];
+        arr.push(even[i]);
+        arr.push(odd[i]);
+        this.articles.push(arr);
+      }
+
+      if (odd.length < even.length) {
+        const arr = [];
+        arr.push(even[even.length - 1]);
+        this.articles.push(arr);
+      }
+    }
+  }
+
+
 
 }

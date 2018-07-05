@@ -2,38 +2,57 @@
   <h1>Articles</h1>
 </div>
 
-<mat-grid-list cols="2" rowHeight="16em">
+<!-- <mat-grid-list>
+  <mat-grid-tile > -->
+<div class="coloredContainerX box" ngClass="col-layout">
+  <div *ngFor="let articleArray of articles">
 
-  <mat-grid-tile *ngFor="let article of articleItems.getAllItems()" >
-    <mat-card class="docs-grid-title">
-      <mat-card-header>
-        <div mat-card-avatar><mat-icon>library_books</mat-icon></div>
-        <mat-card-title>
-          <h3>{{article.name}}</h3>
-        </mat-card-title>
-        <!-- <mat-card-subtitle>
-          <a [routerLink]="['/article/', article.id]" class="docs-card-subtitle">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Read More&nbsp;&nbsp;>>
-          </a>
-        </mat-card-subtitle> -->
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          {{article.summary | shortsummary}}
-          <br>
-          <br>
-          <a [routerLink]="['/article/', article.id]" class="docs-card-subtitle">
-            <span class="docs-card-subtitle-text">Read More&nbsp;&nbsp;>></span>
-          </a>
-        </p>
-      </mat-card-content>
-      <mat-card-actions  class="docs-action-chips">
-        <mat-chip-list>
-          <mat-chip *ngFor="let tag of article.tags" selected color="primary"  class="docs-tag">
-            {{tag}}
-          </mat-chip>
-        </mat-chip-list>
-      </mat-card-actions>
-    </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
+    <div class="coloredContainerX box" ngClass="row-layout col-layout" [ngClass.xs]="{'row-layout':false, 'col-layout':true}"
+      [ngClass.sm]="{'row-layout':false, 'col-layout':true}" [ngClass.md]="{'row-layout':true, 'col-layout':false}" [ngClass.lg]="{'row-layout':true, 'col-layout':false}"
+      [ngClass.xl]="{'row-layout':true, 'col-layout':false}">
+
+      <div *ngFor="let article of articleArray"fxflex 
+      [ngClass.xs]="{'div-row':false, 'div-col':true}"
+      [ngClass.sm]="{'div-row':false, 'div-col':true}" 
+      [ngClass.md]="{'div-row':true, 'div-col':false}" 
+      [ngClass.lg]="{'div-row':true, 'div-col':false}"
+      [ngClass.xl]="{'div-row':true, 'div-col':false}">
+        <div  >
+        <mat-card class="docs-grid-title">
+          <mat-card-header>
+            <div mat-card-avatar>
+              <mat-icon>library_books</mat-icon>
+            </div>
+            <mat-card-title>
+              <h3>{{article.name}}</h3>
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{article.date}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{article.summary | shortsummary}}
+              <br>
+              <br>
+              <a [routerLink]="['/article/', article.id]" class="docs-card-subtitle">
+                <span class="docs-card-subtitle-text">Read More&nbsp;&nbsp;>></span>
+              </a>
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="docs-action-chips">
+            <mat-chip-list>
+              <mat-chip *ngFor="let tag of article.tags" selected color="primary" class="docs-tag">
+                {{tag}}
+              </mat-chip>
+            </mat-chip-list>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<!-- </mat-grid-tile>
+</mat-grid-list> -->

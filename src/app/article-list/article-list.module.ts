@@ -6,12 +6,14 @@ import { ArticleItems } from '../article-items/article-items';
 import { ComponentPageTitle } from '../shared/page-title/page-title';
 import { RouterModule } from '@angular/router';
 import { ShortSummaryPipe } from '../shared/short-summary/short-summary.pipe';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    FlexLayoutModule
   ],
   declarations: [ArticleListComponent, ShortSummaryPipe],
   exports: [ArticleListComponent, ShortSummaryPipe],

@@ -47,3 +47,25 @@
   padding-left: 1em;
   padding-right: 1em;
 }
+
+.row-layout {
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 0%;
+}
+
+.col-layout {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 0%;
+}
+
+.div-row{
+  max-width: 50%;
+}
+
+.div-col{
+  max-width: 100%;
+}
