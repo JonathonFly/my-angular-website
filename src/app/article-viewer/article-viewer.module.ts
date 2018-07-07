@@ -6,13 +6,17 @@ import { ComponentPageTitle } from '../shared/page-title/page-title';
 import { ArticleItems } from '../article-items/article-items';
 import { TableOfContentsModule } from '../shared/table-of-contents/table-of-contents.module';
 import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
+import { BackToTopModule } from '../shared/back-to-top/back-to-top.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   imports: [
     CommonModule,
+    BrowserModule,
     RouterModule,
     TableOfContentsModule,
-    DocViewerModule
+    DocViewerModule,
+    BackToTopModule
   ],
   declarations: [ArticleViewerComponent],
   exports: [ArticleViewerComponent],

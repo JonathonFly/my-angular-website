@@ -7,6 +7,7 @@
 @import './app/article-viewer/article-viewer-theme';
 @import './styles/markdown-theme';
 @import './styles/tables-theme';
+@import './app/shared/back-to-top/back-to-top-theme';
 
 // Styles for the docs app that are based on the current theme.
 @mixin material-docs-app-theme($theme) {
@@ -41,4 +42,5 @@
     @include docs-site-markdown-theme($theme);
     @include docs-site-tables-theme($theme);
     @include article-viewer-theme($theme);
+    @include back-to-top-theme($theme);
   }

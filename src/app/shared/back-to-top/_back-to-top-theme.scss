@@ -1,0 +1,14 @@
+@mixin back-to-top-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  app-back-to-top{
+    .back-to-top-btn {
+      color: mat-color($primary);
+    }
+  }
+  
+}

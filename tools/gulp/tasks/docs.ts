@@ -95,12 +95,12 @@ task('markdown-docs-material', () => {
     }
   };
 
-  return src(['src/assets/docs-md/*.md'])
+  return src(['src/tempfiles/docs-md/*.md'])
       .pipe(rename({prefix: 'jonathonfly-'}))
       .pipe(markdown(markdownOptions))
       .pipe(transform(transformMarkdownFiles))
       .pipe(dom(createTagNameAliaser('docs-markdown')))
-      .pipe(dest('src/assets/documents-large'));
+      .pipe(dest('src/tempfiles/documents-large'));
 });
 
 /**
@@ -125,7 +125,7 @@ task('build-highlighted-examples', () => {
  * highlighted examples can be skipped, because it won't have any effect.
  */
 task('minify-html-files', () => {
-  return src('src/assets/documents-large/**/*.html')
+  return src('src/tempfiles/documents-large/**/*.html')
     .pipe(htmlmin(htmlMinifierOptions))
     .pipe(dest('src/assets/documents'));
 });

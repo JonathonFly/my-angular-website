@@ -1462,3 +1462,6 @@ app-article-viewer {
 
 .docs-api-h3 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12); }
+
+app-back-to-top .back-to-top-btn {
+  color: #e91e63; }

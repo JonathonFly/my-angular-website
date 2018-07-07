@@ -1,4 +1,0 @@
-npm run sass src/assets/custom-themes/deeppurple-amber.scss src/assets/deeppurple-amber.css
-npm run sass src/assets/custom-themes/indigo-pink.scss src/assets/indigo-pink.css
-npm run sass src/assets/custom-themes/pink-bluegrey.scss src/assets/pink-bluegrey.css
-npm run sass src/assets/custom-themes/purple-green.scss src/assets/purple-green.css

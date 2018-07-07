@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleItem, ArticleItems } from '../article-items/article-items';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ComponentPageTitle } from '../shared/page-title/page-title';
@@ -26,6 +26,20 @@ export class ArticleViewerComponent implements OnInit {
 
   ngOnInit() {
     this._componentPageTitle.title = this.article.name;
+  }
+
+  scrollTop() {
+    if (typeof document === 'object' && document) {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      const content = document.querySelector('app-article-viewer');
+      if (content) {
+        content.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+      }
+    }
   }
 
 }

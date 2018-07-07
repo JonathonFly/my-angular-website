@@ -28,17 +28,22 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(){
-    this.timeOutId = setTimeout(() => {
+    this.timeOutId = setInterval(() => {
       if (Splash.isRunning()) {
         Splash.destroy();
+        this.clear();
       }
-    }, 10);
+    }, 5);
   }
 
-  ngOnDestroy(){
+  clear(){
     if (this.timeOutId) {
       clearTimeout(this.timeOutId);
     }
+  }
+
+  ngOnDestroy(){
+    this.clear();
 
   }
 }
