@@ -1,0 +1,48 @@
+{
+  "index": "/index.html",
+  "assetGroups": [{
+    "name": "app",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/favicon.ico",
+        "/index.html",
+        "/*.bundle.css",
+        "/*.bundle.js",
+        "/*.chunk.js"
+      ]
+    }
+  }, {
+    "name": "prefetch-assets",
+    "installMode": "prefetch",
+    "resources": {
+      "files": [
+        "/assets/splash-screen/*",
+        "/assets/favicon.ico",
+        "/assets/*.css"
+      ]
+    }
+  }, {
+    "name": "lazy-assets",
+    "installMode": "lazy",
+    "resources": {
+      "files": [
+        "/assets/documents/**",
+        "/assets/img/**",
+        "/assets/*.css",
+        "/assets/js/*"
+      ]
+    }
+  }, {
+    "name": "static-assets",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "urls":  [
+        "https://fonts.googleapis.com/icon?family=Material+Icons",
+        "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono",
+        "https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.5/web-animations.min.js"
+      ]
+    }
+  }]
+}
