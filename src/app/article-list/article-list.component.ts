@@ -79,7 +79,7 @@ export class ArticleListComponent implements OnInit {
     this.addItems(startIndex, length, 'unshift');
   }
 
-  onScrollDown(ev) {
+  onScrollDown() {
     const start = this.sum;
     this.sum += this.scrollLength;
     this.appendItems(start, this.scrollLength);
@@ -87,7 +87,7 @@ export class ArticleListComponent implements OnInit {
     this.direction = 'down';
   }
 
-  // onUp(ev) {
+  // onUp() {
   //   const start = this.sum;
   //   this.sum += this.scrollLength;
   //   this.prependItems(start, this.sum);
