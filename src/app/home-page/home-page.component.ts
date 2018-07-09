@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComponentPageTitle } from '../shared/page-title/page-title';
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _componentPageTitle: ComponentPageTitle) { }
 
   ngOnInit() {
+    this._componentPageTitle.title = 'HomePage';
   }
 
 }
