@@ -43,6 +43,21 @@ const ARTICLES = [
 
 @Injectable()
 export class ArticleItems {
+  constructor(){
+    for(let i=0;i<20;i++){
+      ARTICLES.push(
+        {
+          id: 'jonathonfly-creating-a-custom-form-field-control'+(i+1),
+          name: 'Creating a custom form field control'+(i+1),
+          document: '/assets/documents/jonathonfly-creating-a-custom-form-field-control.html',
+          summary: `It is possible to create custom form field controls that can be used inside <mat-form-field>. This can be useful if you need to create a component that shares a lot of common behavior with a form field, but adds some additional logic.
+          For example in this guide we'll learn how to create a custom input for inputting US telephone numbers and hook it up to work with <mat-form-field>. Here is what we'll build by the end of this guide:`,
+          tags: ['Creating', 'custom', 'field', 'control'],
+          date: '2018-07-05'
+        }
+      );
+    }
+  }
 
   getAllItems(): ArticleItem[] {
     return ARTICLES;
