@@ -19,13 +19,14 @@ export class ThemePickerComponent implements OnInit {
       accent: '#FFC107',
       href: 'deeppurple-amber.css',
       isDark: false,
+      isDefault: true,
     },
     {
       primary: '#3F51B5',
       accent: '#E91E63',
       href: 'indigo-pink.css',
       isDark: false,
-      isDefault: true,
+      isDefault: false,
     },
     {
       primary: '#E91E63',

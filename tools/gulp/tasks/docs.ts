@@ -1,6 +1,6 @@
-import {task, src, dest} from 'gulp';
+import { task, src, dest } from 'gulp';
 import * as path from 'path';
-import {sequenceTask} from './sequence-task';
+import { sequenceTask } from './sequence-task';
 
 // There are no type definitions available for these imports.
 const markdown = require('gulp-markdown');
@@ -10,7 +10,8 @@ const rename = require('gulp-rename');
 const flatten = require('gulp-flatten');
 const htmlmin = require('gulp-htmlmin');
 const hljs = require('highlight.js');
-const dom  = require('gulp-dom');
+const dom = require('gulp-dom');
+const sass = require('gulp-sass');
 
 // Our docs contain comments of the form `<!-- example(...) -->` which serve as placeholders where
 // example code should be inserted. We replace these comments with divs that have a
@@ -66,6 +67,12 @@ const markdownOptions = {
   }
 };
 
+task('sass', () => {
+  return src('src/tempfiles/custom-themes/**/*.scss')
+    .pipe(sass())
+    .pipe(dest('src/assets/'));
+});
+
 /** Generate all docs content. */
 task('docs', sequenceTask(
   [
@@ -96,11 +103,11 @@ task('markdown-docs-material', () => {
   };
 
   return src(['src/tempfiles/docs-md/*.md'])
-      .pipe(rename({prefix: 'jonathonfly-'}))
-      .pipe(markdown(markdownOptions))
-      .pipe(transform(transformMarkdownFiles))
-      .pipe(dom(createTagNameAliaser('docs-markdown')))
-      .pipe(dest('src/tempfiles/documents-large'));
+    .pipe(rename({ prefix: 'jonathonfly-' }))
+    .pipe(markdown(markdownOptions))
+    .pipe(transform(transformMarkdownFiles))
+    .pipe(dom(createTagNameAliaser('docs-markdown')))
+    .pipe(dest('src/tempfiles/documents-large'));
 });
 
 /**
@@ -115,10 +122,10 @@ task('build-highlighted-examples', () => {
   };
 
   return src('src/material-examples/**/*.+(html|css|ts)')
-      .pipe(flatten())
-      .pipe(rename(renameFile))
-      .pipe(highlight())
-      .pipe(dest('dist/docs/examples'));
+    .pipe(flatten())
+    .pipe(rename(renameFile))
+    .pipe(highlight())
+    .pipe(dest('dist/docs/examples'));
 });
 /**
  * Minifies all HTML files that have been generated. The HTML files for the
@@ -172,7 +179,7 @@ function fixMarkdownDocLinks(link: string, filePath: string): string {
  * @param classPrefix The prefix to use for the alias class.
  */
 function createTagNameAliaser(classPrefix: string) {
-  return function() {
+  return function () {
     MARKDOWN_TAGS_TO_CLASS_ALIAS.forEach(tag => {
       for (let el of this.querySelectorAll(tag)) {
         el.classList.add(`${classPrefix}-${tag}`);
