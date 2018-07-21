@@ -18,7 +18,6 @@
     "resources": {
       "files": [
         "/assets/splash-screen/*",
-        "/assets/favicon.ico",
         "/assets/*.css"
       ]
     }
@@ -27,21 +26,20 @@
     "installMode": "lazy",
     "resources": {
       "files": [
-        "/assets/documents/**",
+        "/assets/documents/*.html",
         "/assets/img/**",
-        "/assets/*.css",
-        "/assets/js/*"
+        "/assets/*.css"
       ]
     }
   }, {
     "name": "static-assets",
     "installMode": "lazy",
     "updateMode": "prefetch",
-    "resources": {
+    "resources": {  
       "urls":  [
         "https://fonts.googleapis.com/icon?family=Material+Icons",
         "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono",
-        "https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.5/web-animations.min.js"
+        "/assets/js/*"
       ]
     }
   }]
