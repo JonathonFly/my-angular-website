@@ -10,6 +10,7 @@ import { Splash } from 'splash-screen';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements AfterViewInit, OnDestroy {
+  intervalId;
   timeOutId;
   constructor(router: Router) {
     let previousRoute = router.routerState.snapshot.url;
@@ -27,18 +28,34 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       });
   }
 
+  // ngAfterViewInit(){
+  //   console.log('ngAfterViewInit')
+  //   let i=0;
+  //   let interval = setInterval(() => {
+  //     i++;
+  //     console.log('do in interval'+i)
+  //     if (Splash.isRunning()) {
+  //       console.log('clear interval condition matched')
+  //       Splash.destroy();
+  //       console.log('start clear interval')
+  //       clearInterval(interval);
+  //       console.log('end clear interval')
+  //     }
+  //   }, 5);
+  // }
+
   ngAfterViewInit(){
-    this.timeOutId = setTimeout(() => {
+    this.intervalId = setInterval(() => {
       if (Splash.isRunning()) {
         Splash.destroy();
         this.clear();
       }
-    }, 300);
+    }, 50);
   }
 
   clear(){
-    if (this.timeOutId) {
-      clearTimeout(this.timeOutId);
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
     }
   }
 

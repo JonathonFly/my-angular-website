@@ -26,17 +26,18 @@
     "installMode": "lazy",
     "resources": {
       "files": [
-        "/assets/documents/*.html",
         "/assets/img/**",
         "/assets/*.css"
       ]
     }
-  }, {
+  },
+  {
     "name": "static-assets",
     "installMode": "lazy",
     "updateMode": "prefetch",
-    "resources": {  
+    "resources": {
       "urls":  [
+        "/assets/documents/*.html",
         "https://fonts.googleapis.com/icon?family=Material+Icons",
         "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono",
         "/assets/js/*"
