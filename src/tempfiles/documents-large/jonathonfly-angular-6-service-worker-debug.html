@@ -1,7 +1,7 @@
 <html><head></head><body><div class="docs-markdown"><h1 class="docs-markdown-h1">Angular 6 Service Worker 调试记</h1><p class="docs-markdown-p">最近在搭建自己的小站的时候，想用一下<code class="docs-markdown-code">Service Worker</code>来提高网站对于低网速环境下的友好度，主要是想利用一下<code class="docs-markdown-code">Service Worker</code>的cache功能。而且利用它，一旦缓存成功，即使在离线情况下，网站依旧能够服务。这对于我的基本都是静态页面的小站来说，一方面能减轻服务器压力，除了第一次和新内容，其他基本都从缓存读取；另一方面，加快内容加载速度，低网速条件下体验能够提升。</p>
 
-        <h3 id="angular-6-service-worker-" class="docs-header-link docs-markdown-h3">
-          <span header-link="angular-6-service-worker-"></span>
+        <h3 id="angular-6-service-worker支持的实现" class="docs-header-link docs-markdown-h3">
+          <span header-link="angular-6-service-worker支持的实现"></span>
           Angular 6 Service Worker支持的实现
         </h3>
       <p class="docs-markdown-p">Angular 从版本5开始支持<code class="docs-markdown-code">Service Worker</code>，配置和使用十分方便，具体包含以下几步：</p>
@@ -13,8 +13,8 @@
 </ol>
 <p class="docs-markdown-p">具体详情请参考：<a href="https://angular.io/guide/service-worker-intro" class="docs-markdown-a">https://angular.io/guide/service-worker-intro</a>.</p>
 
-        <h3 id="-" class="docs-header-link docs-markdown-h3">
-          <span header-link="-"></span>
+        <h3 id="遇到的问题" class="docs-header-link docs-markdown-h3">
+          <span header-link="遇到的问题"></span>
           遇到的问题
         </h3>
       <p class="docs-markdown-p">上述步骤完成后，我用npm命令安装了<code class="docs-markdown-code">http-server</code>，因为<code class="docs-markdown-code">angular/cli</code>自带的<code class="docs-markdown-code">ng serve</code>并不能让<code class="docs-markdown-code">Service Worker</code>可用。安装命令为:</p>
@@ -24,13 +24,13 @@
 http-server -p 8080
 </code></pre><p class="docs-markdown-p">结果很悲剧，我在<code class="docs-markdown-code">Chrome</code>的<code class="docs-markdown-code">Console</code>-&gt;<code class="docs-markdown-code">Application</code>-&gt;<code class="docs-markdown-code">Service Worker</code>里并没有看到实例，在<a href="chrome://serviceworker-internals" class="docs-markdown-a">chrome://serviceworker-internals</a>没有发现本机8080端口的已经注册的<code class="docs-markdown-code">Service Worker</code>，在<a href="chrome://inspect/#service-workers" class="docs-markdown-a">chrome://inspect/#service-workers</a>里也没看到正在运行的。</p>
 
-        <h3 id="-" class="docs-header-link docs-markdown-h3">
-          <span header-link="-"></span>
+        <h3 id="解决过程" class="docs-header-link docs-markdown-h3">
+          <span header-link="解决过程"></span>
           解决过程
         </h3>
       
-        <h4 id="-" class="docs-header-link docs-markdown-h4">
-          <span header-link="-"></span>
+        <h4 id="寻找问题" class="docs-header-link docs-markdown-h4">
+          <span header-link="寻找问题"></span>
           寻找问题
         </h4>
       <p class="docs-markdown-p">说实话，这个步骤是最最吃力的，一旦定位到问题，那么<code class="docs-markdown-code">Google</code>或者<code class="docs-markdown-code">Baidu</code>就能帮上忙了。反之，就只能无头苍蝇乱转，不可能找到解决方法。</p>
@@ -54,14 +54,14 @@ http-server -p 8080
 </code></pre>
 <p class="docs-markdown-p">定睛一看，我勒个大擦，之前我用的<code class="docs-markdown-code">setTimeout</code>，后来又改成<code class="docs-markdown-code">setInterval</code>，但是在clear方法里并没有改成<code class="docs-markdown-code">clearInterval</code>，所以用<code class="docs-markdown-code">clearTimeout</code>方法去清理<code class="docs-markdown-code">interval reference</code>肯定是不会成功的。但是从头到尾，我的控制台都没有报过错，打死我也不会想到一行代码错误就会让<code class="docs-markdown-code">Service Worker</code>完全失效。</p>
 
-        <h4 id="-" class="docs-header-link docs-markdown-h4">
-          <span header-link="-"></span>
+        <h4 id="解决问题" class="docs-header-link docs-markdown-h4">
+          <span header-link="解决问题"></span>
           解决问题
         </h4>
       <p class="docs-markdown-p">将<code class="docs-markdown-code">clearTimeout</code>改为<code class="docs-markdown-code">clearInterval</code>，访问<code class="docs-markdown-code">Chrome Console</code>，<code class="docs-markdown-code">Service Worker</code>能够成功使用。至此，问题得以解决。</p>
 
-        <h3 id="-" class="docs-header-link docs-markdown-h3">
-          <span header-link="-"></span>
+        <h3 id="后记" class="docs-header-link docs-markdown-h3">
+          <span header-link="后记"></span>
           后记
         </h3>
       <p class="docs-markdown-p">为什么一个代码中不影响运行的bug，会让<code class="docs-markdown-code">Service Worker</code>完全失效，这需要更多探索研究。</p>
