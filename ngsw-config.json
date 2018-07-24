@@ -36,10 +36,12 @@
     "installMode": "lazy",
     "updateMode": "prefetch",
     "resources": {
-      "urls":  [
-        "/assets/documents/*.html",
+      "urls":  [  
         "https://fonts.googleapis.com/icon?family=Material+Icons",
-        "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono",
+        "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono"
+      ],
+      "files": [
+        "/assets/documents/*.html",
         "/assets/js/*"
       ]
     }
