@@ -7,16 +7,16 @@ import { ArticleItems } from '../article-items/article-items';
 import { TableOfContentsModule } from '../shared/table-of-contents/table-of-contents.module';
 import { DocViewerModule } from '../shared/doc-viewer/doc-viewer-module';
 import { BackToTopModule } from '../shared/back-to-top/back-to-top.module';
-import { BrowserModule } from '@angular/platform-browser';
+import { ArticleViewerRoutes } from './article-viewer.routing';
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,
     RouterModule,
     TableOfContentsModule,
     DocViewerModule,
-    BackToTopModule
+    BackToTopModule,
+    ArticleViewerRoutes
   ],
   declarations: [ArticleViewerComponent],
   exports: [ArticleViewerComponent],

@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { ShortSummaryPipe } from '../shared/short-summary/short-summary.pipe';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ArticleListRoutes } from './article-list.routing';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MaterialModule,
     RouterModule,
     FlexLayoutModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    ArticleListRoutes
   ],
   declarations: [ArticleListComponent, ShortSummaryPipe],
   exports: [ArticleListComponent, ShortSummaryPipe],
