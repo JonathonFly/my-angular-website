@@ -6,7 +6,11 @@ https://www.jonathonfly.com
 
 1. ~~Use lazy load module, split main js to several bundle js files. Hope it will decrease the cost of first loading.~~
 
+File size before using lazy loading module:
+
 ![files size before use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/before%20lazy%20loading.png)
+
+File size after using lazy loading module:
 
 ![files size after use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/after%20lazy%20loading.png)
 
