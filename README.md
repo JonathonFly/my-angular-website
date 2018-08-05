@@ -5,6 +5,11 @@ https://www.jonathonfly.com
 ## Pending Tasks
 
 1. ~~Use lazy load module, split main js to several bundle js files. Hope it will decrease the cost of first loading.~~
+
+![files size before use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/before%20lazy%20loading.png)
+
+![files size after use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/after%20lazy%20loading.png)
+
 2. Develop a tags page, such as `Angular` tag page for all articles related to `Angular`.
 3. Create a new theme.
 4. Use Material Icon at local instead of google apis site. This is trying to make loading faster.
