@@ -17,21 +17,51 @@
   <script src="assets/splash-screen/splash.min.js"></script>
   <script>
     var Splash = window.Splash;
-  
+
     //enable with a specific theme.
     //Possible themes are: 'tailing', 'audio-wave', 'windcatcher', 'spinner-section', 'spinner-section-far', 'circular'.
-      Splash.enable('windcatcher');
+    Splash.enable('windcatcher');
+
+    setTimeout(() => {
+      echo.init();
+      // setInterval(() => {echo.render();echo},1000);
+    }, 2000)
+
+    // echo.init({
+    //   throttle: 250,
+    //   unload: false,
+    //   callback: function (element, op) {
+    //     console.log(element, 'has been', op + 'ed')
+    //   }
+    // });
+    // setInterval(()=>{
+
+    // },5000)
+
   </script>
 </head>
 
 <body class="docs-app-background">
   <app-root></app-root>
   <script>
-    window.addEventListener('load',function() { window.scrollTo(0, 1); });
+    window.addEventListener('load', function () {
+      window.scrollTo(0, 1);
+    });
+
   </script>
   <script src="assets/js/classList.min.js"></script>
   <script src="assets/js/hammer.min.js"></script>
   <script src="assets/js/web-animations.min.js"></script>
+  <script src="assets/js/echo.min.js"></script>
+  <script>
+      echo.init({
+        throttle: 250,
+        unload: false,
+        callback: function (element, op) {
+        }
+      });
+
+  </script>
 </body>
 
 </html>

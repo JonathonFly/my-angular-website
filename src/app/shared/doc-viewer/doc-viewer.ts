@@ -52,11 +52,27 @@ export class DocViewer implements OnDestroy {
    * @param document The raw document content to show.
    */
   private updateDocument(document: string) {
+
     this._elementRef.nativeElement.innerHTML = document;
     this.textContent = this._elementRef.nativeElement.textContent;
     this._fixFragmentUrls();
     this.contentLoaded.next();
+    this.lazyLoadImageModuleReInit();
   }
+
+  private lazyLoadImageModuleReInit(){
+    let echo = (<any>window).echo;
+    if (echo) {
+      echo.detach();
+      echo.init({
+        throttle: 250,
+        unload: false,
+        callback: function (element, op) {
+        }
+      });
+    }
+  }
+
 
   /** Show an error that ocurred when fetching a document. */
   private showError(url: string, error: HttpErrorResponse) {

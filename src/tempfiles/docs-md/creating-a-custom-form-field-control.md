@@ -71,6 +71,8 @@ class MyTelInput {
 }
 ```
 
+![files size after use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/after%20lazy%20loading.png)
+
 ### Providing our component as a MatFormFieldControl
 
 The first step is to provide our new component as an implementation of the `MatFormFieldControl`
@@ -124,6 +126,8 @@ ngOnDestroy() {
   this.stateChanges.complete();
 }
 ```
+
+![files size before use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/before%20lazy%20loading.png)
 
 #### `id`
 

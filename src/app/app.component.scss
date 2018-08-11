@@ -16,9 +16,9 @@ app-root {
     z-index: 2;
   }
   
-  app-root > app-home-page,
+  app-root > app-home-page{
   // app-root > app-article-list,
-  app-root > app-article-viewer {
+  // app-root > app-article-viewer {
     overflow-y: auto;
   }
   
