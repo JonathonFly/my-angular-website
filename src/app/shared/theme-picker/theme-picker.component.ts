@@ -15,31 +15,42 @@ export class ThemePickerComponent implements OnInit {
 
   themes = [
     {
+      primary: '#827717',
+      accent: '#b71c1c',
+      href: 'lime-red.css',
+      isDark: false,
+      isDefault: true
+    },
+    {
+      primary: '#e65100',
+      accent: '#1976D2',
+      href: 'orange-blue.css',
+      isDark: true
+    },
+    {
       primary: '#673AB7',
       accent: '#FFC107',
       href: 'deeppurple-amber.css',
-      isDark: false,
-      isDefault: true,
-    },
-    {
-      primary: '#3F51B5',
-      accent: '#E91E63',
-      href: 'indigo-pink.css',
-      isDark: false,
-      isDefault: false,
+      isDark: false
     },
     {
       primary: '#E91E63',
       accent: '#607D8B',
       href: 'pink-bluegrey.css',
-      isDark: true,
+      isDark: true
+    },
+    {
+      primary: '#3F51B5',
+      accent: '#E91E63',
+      href: 'indigo-pink.css',
+      isDark: false
     },
     {
       primary: '#9C27B0',
       accent: '#4CAF50',
       href: 'purple-green.css',
-      isDark: true,
-    },
+      isDark: true
+    }
   ];
 
   constructor(

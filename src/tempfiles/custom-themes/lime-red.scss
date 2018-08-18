@@ -1,0 +1,9 @@
+@import '../../app-theme';
+@import '../../highlightjs/material-light';
+
+$primary: mat-palette($mat-lime,900);
+$accent:  mat-palette($mat-red, 800, 700, 900);
+
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
+@include material-docs-app-theme($theme);

@@ -71,7 +71,7 @@ class MyTelInput {
 }
 ```
 
-![files size after use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/after%20lazy%20loading.png)
+![qnyh1.jpg](assets/img/qnyh1.jpg)
 
 ### Providing our component as a MatFormFieldControl
 
@@ -127,7 +127,7 @@ ngOnDestroy() {
 }
 ```
 
-![files size before use lazy loading module](https://github.com/JonathonFly/my-angular-website/blob/master/bench-mark/before%20lazy%20loading.png)
+![qnyh2.jpg](assets/img/qnyh2.jpg)
 
 #### `id`
 

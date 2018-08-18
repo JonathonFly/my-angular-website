@@ -1,4 +1,1 @@
-npm run sass src/tempfiles/custom-themes/deeppurple-amber.scss src/assets/deeppurple-amber.css
-npm run sass src/tempfiles/custom-themes/indigo-pink.scss src/assets/indigo-pink.css
-npm run sass src/tempfiles/custom-themes/pink-bluegrey.scss src/assets/pink-bluegrey.css
-npm run sass src/tempfiles/custom-themes/purple-green.scss src/assets/purple-green.css
+npm run sass

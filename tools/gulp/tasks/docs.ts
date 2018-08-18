@@ -24,6 +24,8 @@ const EXAMPLE_PATTERN = /<!--\W*example\(([^)]+)\)\W*-->/g;
 // documentation page. Using a RegExp to rewrite links in HTML files to work in the docs.
 const LINK_PATTERN = /(<a[^>]*) href="([^"]*)"/g;
 
+const IMG_PATTERN = /<img\s+src="(assets[^"]*)\/([^\/"]+)"([^>]*)>/g;
+
 // HTML tags in the markdown generated files that should receive a .docs-markdown-${tagName} class
 // for styling purposes.
 const MARKDOWN_TAGS_TO_CLASS_ALIAS = [
@@ -144,6 +146,11 @@ function transformMarkdownFiles(buffer: Buffer, file: any): string {
   // Replace <!-- example(..) --> comments with HTML elements.
   content = content.replace(EXAMPLE_PATTERN, (_match: string, name: string) =>
     `<div material-docs-example="${name}"></div>`
+  );
+
+  //replace local image's attributes. support lazy loading.
+  content = content.replace(IMG_PATTERN, (_match: string, imagePath: string, imageName: string, other:string) =>
+    `<img src="${imagePath}/low/${imageName}" data-echo="${imagePath}/${imageName}" width="100%" height="100%"${other}>`
   );
 
   // Replace the URL in anchor elements inside of compiled markdown files.
